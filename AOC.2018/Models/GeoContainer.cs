@@ -1,12 +1,18 @@
+using System;
+
 namespace AOC._2018.Models
 {
     public class GeoContainer
     {
         public GeoContainer(int width, int height)
         {
-            Map = new bool[width,height];
+            Map = new int[width, height];
+            Width = width;
+            Height = height;
         }
 
-        public bool[,] Map { get; set; }
+        public int[,] Map { get; }
+        public int Width { get; }
+        public int Height { get; }
     }
 }
