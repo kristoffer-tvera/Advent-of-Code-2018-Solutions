@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime;
 using AOC._2018.Models;
@@ -51,6 +53,42 @@ namespace AOC._2018
             }
 
             return geoBlocks;
+        }
+
+        public static IEnumerable<LogEvent> Day4Data()
+        {    
+            var lines = System.IO.File.ReadAllLines(@"..\AOC.2018\Data\day4input.txt");
+            var logEvents = new List<LogEvent>();
+
+            foreach (var line in lines)
+            {
+                var startSleep = line.Contains("falls");
+                var endSleep = line.Contains("wakes");
+                var checkIn = line.Contains("begins");
+
+                var dateStr = line.Substring(1, 16);
+
+                if (!DateTime.TryParse(dateStr, out var date)) continue;
+                
+                var logEvent = new LogEvent
+                {
+                    DateTime = date,
+                    EndSleep = endSleep,
+                    StartSleep = startSleep,
+                    CheckIn = checkIn
+                };
+
+                if (line.Contains("#"))
+                {
+                    if (int.TryParse(line.Split('#')[1].Split(' ')[0], out var id))
+                        logEvent.GuardId = id;
+                }
+                      
+                        
+                logEvents.Add(logEvent);
+            }
+
+            return logEvents;
         }
     }
 }
