@@ -18,9 +18,13 @@ namespace AOC._2018
             
 //            Console.WriteLine($"Day 3, part 2: {Day3.Part2(DataImport.Day3Data())}");
             
-            Console.WriteLine($"Day 4, part 1: {Day4.Part1(DataImport.Day4Data())}");
+//            Console.WriteLine($"Day 4, part 1: {Day4.Part1(DataImport.Day4Data())}");
             
-            Console.WriteLine($"Day 4, part 2: {Day4.Part2(DataImport.Day4Data())}");
+//            Console.WriteLine($"Day 4, part 2: {Day4.Part2(DataImport.Day4Data())}");
+            
+            Console.WriteLine($"Day 5, part 1: {Day5.Part1(DataImport.Day5Data())}");
+            
+            Console.WriteLine($"Day 5, part 2: {Day5.Part2(DataImport.Day5Data())}");
         }
     }
 }

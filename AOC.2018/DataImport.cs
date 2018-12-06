@@ -87,5 +87,12 @@ namespace AOC._2018
 
             return logEvents;
         }
+
+        public static string Day5Data()
+        {
+            var text = System.IO.File.ReadAllText(@"..\AOC.2018\Data\day5input.txt");
+
+            return text;
+        }
     }
 }
